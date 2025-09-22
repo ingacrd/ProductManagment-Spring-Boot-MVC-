@@ -20,10 +20,13 @@ public class ProductService {
         return db.findAll();
     }
 
-//    public Product getProduct(String name) {
-//        return products.stream().filter(p->p.getName().equals(name)).findFirst().orElse(null);
-//    }
+    public Product getProduct(String name) {
+        return db.findByName(name);
+    }
 
+    public void addProduct (Product p){
+        db.save(p);
+    }
 //    public List<Product> getProductWithText(String text) {
 //        String str = text.toLowerCase();
 //
